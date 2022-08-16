@@ -1,0 +1,6 @@
+**/.DS_Store
+/doc/build/
+/.vscode/
+/.venv/
+**/public/images/
+**/favicon.ico
