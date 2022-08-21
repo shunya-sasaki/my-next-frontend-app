@@ -5,6 +5,8 @@ import styles from "../styles/Home.module.css";
 import { MyHead } from "../components/head";
 import { MyNavi } from "../components/navi";
 import { MainImage } from "../components/mainimage";
+import { MyFileUploader } from "../components/uploader";
+import { ServerFileList } from "../components/filelist";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +15,9 @@ const Home: NextPage = () => {
       <MyNavi />
 
       <MainImage />
+      <ServerFileList />
+
+      <MyFileUploader />
 
       <main className={styles.main}>
         <h1 className={styles.title}>
@@ -62,9 +67,6 @@ const Home: NextPage = () => {
           rel="noopener noreferrer"
         >
           Powered by{" "}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
         </a>
       </footer>
     </div>
