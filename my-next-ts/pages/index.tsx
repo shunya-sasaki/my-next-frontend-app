@@ -15,9 +15,10 @@ const Home: NextPage = () => {
       <MyNavi />
 
       <MainImage />
-      <ServerFileList />
-
-      <MyFileUploader />
+      <div className="flex w-full">
+        <ServerFileList />
+        <MyFileUploader />
+      </div>
 
       <main className={styles.main}>
         <h1 className={styles.title}>

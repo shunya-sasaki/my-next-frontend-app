@@ -30,13 +30,13 @@ export const ServerFileList = () => {
   const TableItem = (props: TableItemProps) => {
     const { filename } = props;
     return (
-      <tr>
-        <td className="px-4 py-2 border border-slate-500">{filename}</td>
-        <td className="border border-slate-500 text-center">
-          <DownloadButton filename={filename? filename: ""}/>
+      <tr className="flex w-full">
+        <td className="px-4 py-2 w-1/3 border border-slate-500">{filename}</td>
+        <td className="px-4 py-2 w-1/3 border border-slate-500 text-center">
+          <DownloadButton filename={filename ? filename : ""} />
         </td>
-        <td className="border border-slate-500 text-center">
-          <DeleteButton filename={filename? filename: ""}/>
+        <td className="px-4 py-2 w-1/3 border border-slate-500 text-center">
+          <DeleteButton filename={filename ? filename : ""} />
         </td>
       </tr>
     );
@@ -44,25 +44,25 @@ export const ServerFileList = () => {
 
   const FilelistTable = () => {
     return (
-      <table className="table-auto px-4 py-2">
-        <thead>
-          <tr>
-            <th className="px-4 py-2">File Name</th>
-            <th className="px-4 py-2">Download link</th>
-            <th className="px-4 py-2">Delete link</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filelist.map((filename, index) => {
-            return <TableItem filename={filename} key={index} />;
-          })}
-        </tbody>
-      </table>
+        <table className="w-full px-4 py-2">
+          <thead className="w-full">
+            <tr className="flex w-full">
+              <th className="px-4 py-2 w-1/3">File Name</th>
+              <th className="px-4 py-2 w-1/3">Download link</th>
+              <th className="px-4 py-2 w-1/3">Delete link</th>
+            </tr>
+          </thead>
+          <tbody className="w-full flex flex-col justify-between overflow-y-scroll h-64">
+            {filelist.map((filename, index) => {
+              return <TableItem filename={filename} key={index} />;
+            })}
+          </tbody>
+        </table>
     );
   };
 
   return (
-    <div className="px-4">
+    <div className="px-4 w-full">
       <div className="text-3xl font-bold">File List</div>
       <div className="px-4">
         <FilelistTable />

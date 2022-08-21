@@ -2,7 +2,6 @@
  * Defintion of Download button component
  */
 import axios from "axios";
-import {saveAs} from "file-saver"
 
 interface DownloadButtonProps {
   filename: string;
@@ -12,12 +11,13 @@ const onClickDownloadButton = (filename: string) => {
   axios
     .get("http://localhost:8000/download/" + filename)
     .then((response) => {
-      console.log(response);
-      const blob = new Blob([response.data], {
-        type: response.data.type,
-      });
-      saveAs(blob, filename)
-      
+      const downloadUrl = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement("a");
+      link.href = downloadUrl;
+      link.setAttribute("download", filename);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
     })
     .catch((error) => {
       console.log(error);

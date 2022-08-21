@@ -34,13 +34,8 @@ export const MyFileUploader = () => {
   };
 
   return (
-    <div className="px-4">
-      <label
-        className="block mb-2 text-xl font-medium text-gray-900 dark:text-gray-300"
-        htmlFor="file_input"
-      >
-        Upload file
-      </label>
+    <div className="px-4 w-full">
+      <div className="text-3xl font-bold pb-4">Upload New File</div>
       <input
         className="block w-full file:px-4 file:py-2 file:rounded-full file:bg-indigo-100 file:text-indigo-500 file:text-sm file:border-none file:font-semibold hover:file:bg-indigo-500 hover:file:text-white text-sm text-gray-500 font-semibold"
         id="file_input"
