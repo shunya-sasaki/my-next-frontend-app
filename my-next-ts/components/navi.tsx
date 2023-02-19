@@ -5,7 +5,7 @@
 export const MyNavi = () => {
   return (
     <div className="flex flex-row justify-between content-center bg-indigo-500 mx-auto">
-      <div className="p-1.5 text-3xl text-white">My Navi</div>
+      <div className="p-1.5 text-3xl font-extrabold text-white">My Next App with TypeScript</div>
       <ul className=" w-60 flex flex-row justify-between list-disc items-center text-white">
         <li className="w-32 p-1.5 ">
           <a className="hover:text-red-500" href="https://tailwindcss.com/docs/installation">Tailwindcss</a>

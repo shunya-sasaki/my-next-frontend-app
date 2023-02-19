@@ -44,34 +44,36 @@ export const ServerFileList = () => {
 
   const FilelistTable = () => {
     return (
-        <table className="w-full px-4 py-2">
-          <thead className="w-full">
-            <tr className="flex w-full">
-              <th className="px-4 py-2 w-1/3">File Name</th>
-              <th className="px-4 py-2 w-1/3">Download link</th>
-              <th className="px-4 py-2 w-1/3">Delete link</th>
-            </tr>
-          </thead>
-          <tbody className="w-full flex flex-col justify-between overflow-y-scroll h-64">
-            {filelist.map((filename, index) => {
-              return <TableItem filename={filename} key={index} />;
-            })}
-          </tbody>
-        </table>
+      <table className="w-full px-4 py-2">
+        <thead className="w-full">
+          <tr className="flex w-full">
+            <th className="px-4 py-2 w-1/3">File Name</th>
+            <th className="px-4 py-2 w-1/3">Download link</th>
+            <th className="px-4 py-2 w-1/3">Delete link</th>
+          </tr>
+        </thead>
+        <tbody className="w-full flex flex-col justify-between overflow-y-scroll h-64">
+          {filelist.map((filename, index) => {
+            return <TableItem filename={filename} key={index} />;
+          })}
+        </tbody>
+      </table>
     );
   };
 
   return (
     <div className="px-4 w-full">
-      <div className="text-3xl font-bold">File List</div>
-      <div className="px-4">
-        <FilelistTable />
+      <div className="flex w-full justify-start">
+        <div className="text-3xl font-bold items-center">File List</div>
         <button
-          className="block bg-indigo-100 rounded-full text-indigo-500 hover:bg-indigo-500 hover:text-indigo-100 px-4 py-2 mt-4"
+          className="ml-4 items-center bg-indigo-100 rounded-full text-indigo-500 hover:bg-indigo-500 hover:text-indigo-100 px-4 py-2"
           onClick={onClickFilelist}
         >
           Reload
         </button>
+      </div>
+      <div className="px-4">
+        <FilelistTable />
       </div>
     </div>
   );
